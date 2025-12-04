@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.candle.overlay">
+    package="com.overlay">
 
-    <!-- السماح بالإنترنت لفتح quotex -->
+    <!-- إذن الإنترنت -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- لجعل التطبيق يظهر فوق التطبيقات إن احتجنا مستقبلاً -->
+    <!-- إذن الظهور فوق التطبيقات -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
         android:label="Candle Overlay"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat">
-        
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- OverlayService -->
+        <service
+            android:name=".OverlayService"
+            android:exported="false"
+            android:enabled="true" />
 
     </application>
 
